@@ -24,8 +24,8 @@ def run_task_1():
 
 # TASK 2
 def optimal_inventory_level(daily_demand=20, service_level=95):
-    for i in range(401):
-        inventory = 399 + i
+    for i in range(10000):
+        inventory = 1 + i
         enough = 0
         not_enough = 0
         for _ in range(1000):
@@ -44,14 +44,14 @@ def run_task_2():
 
 # TASK 3
 def run_task_3():
-    daily_demand = int(input('What is the average daily demand? '))
-    service_level = int(input('What service level do you want to obtain? (0-100) '))
+    daily_demand = int(input('What is the average daily demand?\n'))
+    service_level = int(input('What service level do you want to obtain? (0-100)\n'))
     inventory = optimal_inventory_level(daily_demand=daily_demand, service_level=service_level)
     print(f"The optimal inventory level securing a {service_level}% service level is {inventory}.")
 
 # RUN CODES
 while True:
-    answer = int(input('What task-code do you want to try? (1-3) '))
+    answer = int(input('What task-code do you want to try? (1-3)\n'))
     if answer == 1:
         run_task_1()
     elif answer == 2:
@@ -60,5 +60,5 @@ while True:
         run_task_3()
     else:
         print('Insert correct number!')
-    if input('Do you want to try again? (yes/no) ') == 'no':
+    if input('Do you want to try again? (yes/no)\n') == 'no':
         break
